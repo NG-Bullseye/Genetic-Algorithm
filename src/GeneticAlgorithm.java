@@ -13,16 +13,45 @@ public class GeneticAlgorithm {
     public static void main(String args[]){
         GeneticAlgorithm geneticAlgorithm= new GeneticAlgorithm();
         Solution solution=geneticAlgorithm.run();
-        for (Maschine m :solution.getSolution().keySet()
-                ) {
-            System.out.println(m.getName()+": ");
-            for (Operation o :solution.getSolution().get(m)
-                    ) {
-                System.out.print(o.getName()+" ");
+        geneticAlgorithm.printSolution(solution);
+
+    }
+
+    public Integer getWorkingTime(Solution solution){
+        Map<Maschine,Integer> maschineTimes=new HashMap<>();
+        for (Maschine maschine: solution.getSolution().keySet()
+             ) {
+            for (Operation op :
+                    solution.getSolution().get(maschine)) {
+                maschineTimes.put(maschine,maschineTimes.getOrDefault(maschine,0)+op.getTime());
             }
         }
-        System.out.println("Maschine Runtime: "+solution.getProcessingTime());
+        List<Integer> times=new ArrayList<>();
+        for (Maschine m:maschineTimes.keySet()
+             ) {
+          times.add(maschineTimes.get(m));
+        }
+        return Collections.max(times);
+    }
 
+    public void printSolution(Solution solution){
+        if (solution==null)throw new NullPointerException("solution must not be null");
+        System.out.println("########################## SOLUTION ########################");
+        for (Maschine m :solution.getSolution().keySet()
+        ) {
+            System.out.println();
+            System.out.print(m.getName()+": ");
+            for (Operation o :solution.getSolution().get(m)
+            ) {
+                System.out.print(" "+o.getName());
+                for (int i=0;i<o.getTime();i++){
+                    System.out.print("-");
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Maschine Runtime: "+getWorkingTime(solution));
+        System.out.println("############################################################");
     }
 
     void init(){
@@ -280,10 +309,12 @@ public class GeneticAlgorithm {
             List<Operation> dependencies=null;
             if (jobs==null||jobs.size()==0)throw new NullPointerException("no jobs found");
             for (List<Operation> job:jobs){
+
                 if (job==null||job.size()==0)throw new NullPointerException("no ops in Job");
                 for (Operation op:
                      job) {
-                    System.out.println("is "+shortestOp.getName()+" equal "+op.getName()+"?");
+
+                    System.out.println("Is "+shortestOp.getName()+" equal "+op.getName()+"?");
                     if (shortestOp.equals(op)){
                         dependencies=job;
                         System.out.println("Yes");
@@ -291,41 +322,45 @@ public class GeneticAlgorithm {
                     }
                     else System.out.println("No");
                 }
-                if (dependencies!=null)break;
-            }
-            //</editor-fold>
-
-            //wenn dependancy satisfied
-            if (dependencies==null)throw new NullPointerException("no dependency list found");
-            for (Operation dependency :
-                    dependencies) {
-                if (dependency.equals(shortestOp)) break; //wenn alle wichtigen dependencies gecheckt
-                if (!dependency.isDone()){ //wenn dependency noch nicht fertig (problem gefunden)
-                    Maschine maschineWithProblematicDependancy=null;
-                    for (Maschine ma : //finde Maschine wo das Problem auftritt
-                            combinedSolution.getSolution().keySet()) {
-                        if(combinedSolution.getSolution().get(ma).contains(dependency))
-                            maschineWithProblematicDependancy=ma;
-                    }
-
-                    int nopeTime=0;
-                    if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
-                    for (Operation opForNopeTime : //finde die Operationen der Solution in der Maschine mit dem Problem
-                            combinedSolution.getSolution().get(maschineWithProblematicDependancy)
-                    ) {
-                        if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
-                            nopeTime=nopeTime+opForNopeTime.getRemainingTime();
-                        }
-                        else break; //stelle gefunden an der das Problem auftritt
-
-                    }
-                    //füge nope vor der Operation ein
-                    List<Operation> OpListFromShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
-                    int positionForNope= OpListFromShortestOp.indexOf(shortestOp);
-                    OpListFromShortestOp.add(positionForNope,(new Operation("nope",nopeTime))); //füge nope mit ensprechender wartezeit ein
+                if (dependencies!=null){
+                    System.out.println("dependancies found! "+dependencies.toString());
+                    break;
                 }
             }
 
+            //</editor-fold>
+
+            //wenn dependancy satisfied
+            if (dependencies!=null){
+                for (Operation dependency :
+                        dependencies) {
+                    if (dependency.equals(shortestOp)) break; //wenn alle wichtigen dependencies gecheckt
+                    if (!dependency.isDone()){ //wenn dependency noch nicht fertig (problem gefunden)
+                        Maschine maschineWithProblematicDependancy=null;
+                        for (Maschine ma : //finde Maschine wo das Problem auftritt
+                                combinedSolution.getSolution().keySet()) {
+                            if(combinedSolution.getSolution().get(ma).contains(dependency))
+                                maschineWithProblematicDependancy=ma;
+                        }
+
+                        int nopeTime=0;
+                        if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
+                        for (Operation opForNopeTime : //finde die Operationen der Solution in der Maschine mit dem Problem
+                                combinedSolution.getSolution().get(maschineWithProblematicDependancy)
+                        ) {
+                            if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
+                                nopeTime=nopeTime+opForNopeTime.getRemainingTime();
+                            }
+                            else break; //stelle gefunden an der das Problem auftritt
+
+                        }
+                        //füge nope vor der Operation ein
+                        List<Operation> OpListFromShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
+                        int positionForNope= OpListFromShortestOp.indexOf(shortestOp);
+                        OpListFromShortestOp.add(positionForNope,(new Operation("nope",nopeTime))); //füge nope mit ensprechender wartezeit ein
+                    }
+                }
+            }
 
             shortestOp.setDone(true); //shortestOp abgearbeitet
 

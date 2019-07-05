@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.*;
+import static org.junit.Assert.*;
 
 public class GeneticAlgorithmTests {
 
@@ -102,7 +103,7 @@ public class GeneticAlgorithmTests {
         Solution testSolution=new Solution(this.solutionMap);
 
         this.geneticAlgorithm.fixDependancyIssues(testSolution);  //ändert die object reference auf testSolution
-        System.out.println("TestLoop");
+        System.out.println("########################################### TEST #############################################");
         for (Maschine m:
                 testSolution.getSolution().keySet()) {
             for (Operation op :
@@ -110,8 +111,10 @@ public class GeneticAlgorithmTests {
                 List<Operation> dependencyList=null;
                 for (List<Operation> dependencies:
                         dataSet.getJobs()) {
+
                     for (Operation dependancyOp :
                             dependencies) {
+
                         System.out.println("is "+op.getName()+" equal "+dependancyOp.getName()+"?");
                         if (dependancyOp.equals(op)){
                             dependencyList=dependencies;
@@ -120,15 +123,23 @@ public class GeneticAlgorithmTests {
                         }
                         else System.out.println("No");
                     }
+                    if(dependencyList!=null)
+                        break;
                 }
-                if (dependencyList==null) throw new NullPointerException("dependencyList is null");
-                for (Operation dependency:
-                        dependencyList) {
-                    if (!dependency.isDone()) check=false;
-                }
+                if (dependencyList!=null)
+                    for (Operation dependency:
+                            dependencyList) {
+                        if (!dependency.isDone()) {
+                            System.out.println("############################## TEST FAILED #############################");
+                            System.out.println("dependancy for "+op.getName()+" not satisfied:");
+                            System.out.println(dependency.getName() +" is "+dependency.isDone());
+                            geneticAlgorithm.printSolution(testSolution);
+                            check = false;
+                        }
+                    }
             }
-        }
 
-        assert(check);
+        }
+        assertTrue(check);
     }
 }
