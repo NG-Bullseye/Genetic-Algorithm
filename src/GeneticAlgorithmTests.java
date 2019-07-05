@@ -89,6 +89,7 @@ public class GeneticAlgorithmTests {
 
             }
         }
+        geneticAlgorithm.printSolution(new Solution(solutionMap));
         assert(!check);
 
     }
@@ -102,44 +103,59 @@ public class GeneticAlgorithmTests {
         DataSet dataSet=this.geneticAlgorithm.getDataSet();
         Solution testSolution=new Solution(this.solutionMap);
 
+        System.out.println("+++ Solution before fixing +++");
+        geneticAlgorithm.printSolution(testSolution);
         this.geneticAlgorithm.fixDependancyIssues(testSolution);  //ändert die object reference auf testSolution
+        System.out.println("+++ Solution after fixing +++");
+        geneticAlgorithm.printSolution(testSolution);
         System.out.println("########################################### TEST #############################################");
+        geneticAlgorithm.resetOperationValuesForNextGen();
         for (Maschine m:
                 testSolution.getSolution().keySet()) {
+
             for (Operation op :
                     testSolution.getSolution().get(m)) {
                 List<Operation> dependencyList=null;
+                System.out.println("## TESTING "+op.getName()+" FOR DEPENDENCY PROBLEMS ##");
+
                 for (List<Operation> dependencies:
                         dataSet.getJobs()) {
 
                     for (Operation dependancyOp :
                             dependencies) {
-
-                        System.out.println("is "+op.getName()+" equal "+dependancyOp.getName()+"?");
                         if (dependancyOp.equals(op)){
+                            System.out.println("DependancyList for "+op.getName()+" found! ");
+                            System.out.println(dependencies.toString());
                             dependencyList=dependencies;
-                            System.out.println("Yes");
                             break;
                         }
-                        else System.out.println("No");
                     }
                     if(dependencyList!=null)
                         break;
                 }
-                if (dependencyList!=null)
+                if (dependencyList!=null){
                     for (Operation dependency:
                             dependencyList) {
+                        if (dependency.equals(op)){
+                            System.out.print("Operation "+op.getName()+"= Dependency "+dependency.getName()+"=> all dependancies done.");
+                            break;
+                        }
                         if (!dependency.isDone()) {
                             System.out.println("############################## TEST FAILED #############################");
-                            System.out.println("dependancy for "+op.getName()+" not satisfied:");
-                            System.out.println(dependency.getName() +" is "+dependency.isDone());
+                            System.out.println("Dependancy for "+op.getName()+" not satisfied:");
+                            System.out.println(dependency.getName() +" has to be done beforehand");
                             geneticAlgorithm.printSolution(testSolution);
                             check = false;
                         }
                     }
+                } else System.out.println("nope detected => Skipp check");
+                 System.out.println("## All Clear ##");
             }
 
         }
+        geneticAlgorithm.printSolution(testSolution);
         assertTrue(check);
     }
+
+
 }

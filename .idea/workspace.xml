@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0807b542-84f8-48bb-80f6-70c3967262de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$2.class" afterDir="false" />
@@ -69,14 +68,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="11276" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="12855" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11276" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="12855" />
+          <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -86,12 +85,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="269">
+              <caret line="327" column="12" lean-forward="true" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
               <folding>
-                <element signature="method#init#0;class#GeneticAlgorithm#0" />
-                <element signature="method#getStartPopulation#0;class#GeneticAlgorithm#0" />
-                <element signature="method#chooseFittest#0;class#GeneticAlgorithm#0" />
+                <element signature="method#main#0;class#GeneticAlgorithm#0" />
+                <element signature="method#getWorkingTime#0;class#GeneticAlgorithm#0" />
+                <element signature="method#printSolution#0;class#GeneticAlgorithm#0" />
+                <element signature="method#run#0;class#GeneticAlgorithm#0" />
+                <element signature="method#fetchSolution#0;class#GeneticAlgorithm#0" />
+                <element signature="method#nextGen#0;class#GeneticAlgorithm#0" />
+                <element signature="class#5107:5406" />
+                <element signature="method#compare#0;class#5107:5406" />
+                <element signature="class#7332:7815" />
+                <element signature="method#compare#0;class#7332:7815" />
                 <element signature="method#mutate#0;class#GeneticAlgorithm#0" />
               </folding>
             </state>
@@ -101,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="133" column="80" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
+            <state relative-caret-position="-496">
+              <caret line="106" column="53" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -205,6 +211,7 @@
       <find>dataSet</find>
       <find>fixde</find>
       <find>yes</find>
+      <find>feasa</find>
     </findStrings>
     <replaceStrings>
       <replace>geneticAlgorithm</replace>
@@ -231,8 +238,8 @@
         <option value="$PROJECT_DIR$/codemr/ProblemSolving 2/graphs/new_graph.cmr" />
         <option value="$PROJECT_DIR$/src/Tests/GeneticAlgorithmTests.java" />
         <option value="$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr" />
-        <option value="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" />
         <option value="$PROJECT_DIR$/src/Solution.java" />
+        <option value="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" />
         <option value="$PROJECT_DIR$/src/GeneticAlgorithm.java" />
       </list>
     </option>
@@ -253,57 +260,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -311,7 +268,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562326630258" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562336902906" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/CodeMR-2019.1.1.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -442,47 +399,56 @@
       <workItem from="1562065813647" duration="4895000" />
       <workItem from="1562151632444" duration="12805000" />
       <workItem from="1562267523756" duration="1450000" />
-      <workItem from="1562320884246" duration="6024000" />
+      <workItem from="1562320884246" duration="15931000" />
     </task>
+    <task id="LOCAL-00001" summary="fix">
+      <created>1562326928787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562326928787</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 12h 58m 58s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 14h 57m 22s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 00m 41s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 14m 16s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 03m 33s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 18m 20s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 04m 48s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 19m 22s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 07m 25s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 20m 49s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 11m 01s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 23m 58s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 20m 59s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 45m 18s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 32m 41s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 47m 10s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 35m 22s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 16h 02m 08s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 13h 37m 13s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 16h 02m 32s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57762000" />
+    <option name="totallyTimeSpent" value="67669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1430096" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -495,8 +461,8 @@
       <window_info id="Learn" order="8" weight="0.32977587" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.85820895" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23454158" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5362473" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -504,7 +470,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32942432" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32942432" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -560,14 +526,102 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>388</line>
+          <line>417</line>
           <properties />
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>386</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>387</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>388</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>299</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>314</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>335</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>354</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>362</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>377</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>322</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>345</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>346</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
+          <line>395</line>
+          <properties />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -656,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="133" column="80" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -679,14 +723,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-496">
+          <caret line="106" column="53" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="269">
+          <caret line="327" column="12" lean-forward="true" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
           <folding>
-            <element signature="method#init#0;class#GeneticAlgorithm#0" />
-            <element signature="method#getStartPopulation#0;class#GeneticAlgorithm#0" />
-            <element signature="method#chooseFittest#0;class#GeneticAlgorithm#0" />
+            <element signature="method#main#0;class#GeneticAlgorithm#0" />
+            <element signature="method#getWorkingTime#0;class#GeneticAlgorithm#0" />
+            <element signature="method#printSolution#0;class#GeneticAlgorithm#0" />
+            <element signature="method#run#0;class#GeneticAlgorithm#0" />
+            <element signature="method#fetchSolution#0;class#GeneticAlgorithm#0" />
+            <element signature="method#nextGen#0;class#GeneticAlgorithm#0" />
+            <element signature="class#5107:5406" />
+            <element signature="method#compare#0;class#5107:5406" />
+            <element signature="class#7332:7815" />
+            <element signature="method#compare#0;class#7332:7815" />
             <element signature="method#mutate#0;class#GeneticAlgorithm#0" />
           </folding>
         </state>

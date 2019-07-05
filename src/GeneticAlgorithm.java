@@ -4,7 +4,7 @@ public class GeneticAlgorithm {
 
     private DataSet dataSet;
 
-    private final int POPULATION_NUMBER=100;
+    private final int POPULATION_NUMBER=4;
     private final int MAX_GENERATIONS=100;
     private final int TOP_X_FOR_NEXT_GEN=5;
     private final int NUMBER_OF_MASCHINES=4;
@@ -52,6 +52,18 @@ public class GeneticAlgorithm {
         System.out.println();
         System.out.println("Maschine Runtime: "+getWorkingTime(solution));
         System.out.println("############################################################");
+    }
+
+    public void resetOperationValuesForNextGen() {
+        for (List<Operation> l :
+                dataSet.getJobs()) {
+            for (Operation op :
+                    l) {
+                op.setInProgress(false);
+                op.setDone(false);
+            }
+        }
+
     }
 
     void init(){
@@ -106,11 +118,13 @@ public class GeneticAlgorithm {
     }
 
     List<Solution> getStartPopulation(){
+        System.out.print("#### BUILD STARTING POPULATION ####");
         List<Solution> startPopulation=new ArrayList<>();
 
         for (int i=0;i<POPULATION_NUMBER;i++){
             startPopulation.add(fetchSolution(dataSet));
         }
+        System.out.print("Startpupolation: "+startPopulation.size());
         return startPopulation;
     }
 
@@ -137,12 +151,15 @@ public class GeneticAlgorithm {
                 }
             }
         }
+        System.out.print("############## Solution with dependancy issues ###############");
+        printSolution(new Solution(solution));
         return fixDependancyIssues(new Solution(solution));
     }
 
 
 
     private void nextGen() {
+        System.out.print("#### NEXT GENERATION REQUESTED ####");
         List<Solution> nextGen=new ArrayList<>();
         List<Solution> fittest=chooseFittest();
         nextGen=recombine(fittest);
@@ -151,6 +168,7 @@ public class GeneticAlgorithm {
     }
 
     private List<Solution> chooseFittest(){
+        System.out.print("#### CHOOSING FITTEST ####");
         List<Solution> topX=new ArrayList<>();
         List<Solution> population= dataSet.getCurrentPopulation();
 
@@ -194,6 +212,7 @@ public class GeneticAlgorithm {
     }
 
     private List<Solution> recombine(List<Solution> fittest){
+        System.out.print("#### RECOMBINING ####");
         List<Solution> nextGen=new ArrayList<>();
         while (nextGen.size()<MAX_GENERATIONS){
 
@@ -261,23 +280,21 @@ public class GeneticAlgorithm {
     }
 
     private Solution makeFeasable(Solution combinedSolution) {
-        for (Maschine m :
-                combinedSolution.getSolution().keySet()) {
+        for (Maschine m : combinedSolution.getSolution().keySet()) {
+
             List<Operation> maschineOpList=combinedSolution.getSolution().get(m);
-            for (Operation operation:
-            maschineOpList ) {
+            for (Operation operation: maschineOpList ) {
                 //check if maschines only contain feasable Ops in potential Solution
                 if (!m.getFeasibleOps().contains(operation)){
                     return  null;
                 }
-
             }
-            return fixDependancyIssues(combinedSolution);
         }
-        return null;
+        return fixDependancyIssues(combinedSolution);
     }
 
      public Solution fixDependancyIssues(Solution combinedSolution) {
+        resetOperationValuesForNextGen();
         List<List<Operation>> jobs=this.dataSet.getJobs();
         Set<Maschine> maschines= combinedSolution.getSolution().keySet();
         Map<Operation,Maschine> topLayer=new HashMap<>();
@@ -286,14 +303,16 @@ public class GeneticAlgorithm {
             topLayer.clear();
             for (Maschine m :maschines
                   ) {
+
                 for (Operation op :
                         combinedSolution.getSolution().get(m)) {
-                    if (!op.isDone()||op.isInProgress()) {
+                    if (!op.isDone()) {
                         topLayer.put(op,m);
+
                         break;
             }   }   }
 
-            if (topLayer.keySet().size()==0)break; //wenn alle Ops Ready sind
+            if (topLayer.isEmpty())break; //wenn alle Ops Ready sind
 
             Operation shortestOp=null;
 
@@ -305,59 +324,71 @@ public class GeneticAlgorithm {
             }   }
             //</editor-fold>
 
-            //<editor-fold desc="Find Dependancy List for SHortest OP in Toplayer">
+            //<editor-fold desc="Find Dependancy List for sortestOp in Toplayer">
             List<Operation> dependencies=null;
-            if (jobs==null||jobs.size()==0)throw new NullPointerException("no jobs found");
+                                                                        if (jobs==null||jobs.size()==0)throw new NullPointerException("no jobs found");
             for (List<Operation> job:jobs){
-
-                if (job==null||job.size()==0)throw new NullPointerException("no ops in Job");
+                                                                                if (job==null||job.size()==0)throw new NullPointerException("no ops in Job");
                 for (Operation op:
                      job) {
 
-                    System.out.println("Is "+shortestOp.getName()+" equal "+op.getName()+"?");
                     if (shortestOp.equals(op)){
                         dependencies=job;
-                        System.out.println("Yes");
                         break;
                     }
-                    else System.out.println("No");
                 }
                 if (dependencies!=null){
-                    System.out.println("dependancies found! "+dependencies.toString());
                     break;
                 }
             }
-
             //</editor-fold>
 
-            //wenn dependancy satisfied
-            if (dependencies!=null){
+            if (dependencies!=null){ //wenn shortestOp kein nope
                 for (Operation dependency :
                         dependencies) {
-                    if (dependency.equals(shortestOp)) break; //wenn alle wichtigen dependencies gecheckt
-                    if (!dependency.isDone()){ //wenn dependency noch nicht fertig (problem gefunden)
+                                                                                            if (dependency.equals(shortestOp)) break; //wenn alle wichtigen dependencies gecheckt
+                    if (!dependency.isDone()){ //FÜR JEDE PROLMEMATISCHE DEPENDANCY
                         Maschine maschineWithProblematicDependancy=null;
                         for (Maschine ma : //finde Maschine wo das Problem auftritt
                                 combinedSolution.getSolution().keySet()) {
                             if(combinedSolution.getSolution().get(ma).contains(dependency))
                                 maschineWithProblematicDependancy=ma;
                         }
-
-                        int nopeTime=0;
-                        if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
+                                                                        if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
+                        int timeUntilDependencyDone=0;
                         for (Operation opForNopeTime : //finde die Operationen der Solution in der Maschine mit dem Problem
                                 combinedSolution.getSolution().get(maschineWithProblematicDependancy)
                         ) {
                             if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
-                                nopeTime=nopeTime+opForNopeTime.getRemainingTime();
+                                timeUntilDependencyDone=timeUntilDependencyDone+opForNopeTime.getRemainingTime();
+                            }
+                            else
+                            {
+                                timeUntilDependencyDone=timeUntilDependencyDone+dependency.getTime();
+                                break; //stelle gefunden an der das Problem auftritt
+                            }
+
+                        }
+
+                        int timeUntilOp=0;
+                        for (Operation opBeforeshortestOp : //finde die Operationen der Solution in der Maschine mit dem Problem
+                                combinedSolution.getSolution().get(topLayer.get(shortestOp))
+                        ) {
+                            if (!opBeforeshortestOp.equals(shortestOp)){//berechne vergangene Zeit bis zur Problemstelle
+                                timeUntilOp=timeUntilOp+opBeforeshortestOp.getRemainingTime();
                             }
                             else break; //stelle gefunden an der das Problem auftritt
 
                         }
+
                         //füge nope vor der Operation ein
-                        List<Operation> OpListFromShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
-                        int positionForNope= OpListFromShortestOp.indexOf(shortestOp);
-                        OpListFromShortestOp.add(positionForNope,(new Operation("nope",nopeTime))); //füge nope mit ensprechender wartezeit ein
+                        System.out.println("$$$$$$$$$$$$$$$$$$$$$"+shortestOp.getName()+"$$$$$$$$$$$$$$$$$$$$$");
+                        printSolution(combinedSolution);
+                        List<Operation> listOfMaschineTasksForShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
+                        int positionForNope = listOfMaschineTasksForShortestOp.indexOf(shortestOp);
+                        listOfMaschineTasksForShortestOp.add(positionForNope,(new Operation("nope",timeUntilOp-timeUntilDependencyDone))); //füge nope mit ensprechender wartezeit ein
+                        printSolution(combinedSolution);
+                        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                     }
                 }
             }
@@ -367,17 +398,15 @@ public class GeneticAlgorithm {
             for (Operation op :
                     topLayer.keySet()) {
                 if (!op.equals(shortestOp)){
-                    if (op.getRemainingTime()-shortestOp.getRemainingTime()==0){
-                        //abgearbeitet weil mehrere gleichzeitig fertig
-                        combinedSolution.getSolution().get(topLayer.get(shortestOp)).remove(shortestOp);
-                        op.setDone(true);
-                        op.setInProgress(false);
-                    }
-                    else{
                         op.setRemainingTime(op.getRemainingTime()-shortestOp.getRemainingTime());
-                        op.setDone(false);
-                        op.setInProgress(true);
-                    }
+                         if(op.getRemainingTime()<=0){
+                             op.setDone(true);
+                             op.setInProgress(false);
+                         }
+                         else{
+                             op.setDone(false);
+                             op.setInProgress(true);
+                         }
                 }
             }
         }
