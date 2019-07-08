@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0807b542-84f8-48bb-80f6-70c3967262de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr" beforeDir="false" afterPath="$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithmTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProblemSolving/GeneticAlgorithmTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeneticAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneticAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" afterDir="false" />
     </list>
@@ -41,52 +39,53 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.40" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JAVA/GeneticAlgorithm" value="2" />
-          <entry key="class" value="1" />
-          <entry key="cmr" value="8" />
-          <entry key="java" value="14" />
-          <entry key="mdl" value="7" />
+          <entry key="class" value="3" />
+          <entry key="cmr" value="12" />
+          <entry key="java" value="26" />
+          <entry key="mdl" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="Graph file" value="8" />
-          <entry key="JAVA" value="14" />
-          <entry key="Model file" value="7" />
+          <entry key="CLASS" value="3" />
+          <entry key="Graph file" value="12" />
+          <entry key="JAVA" value="26" />
+          <entry key="Model file" value="9" />
           <entry key="UML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="12855" />
+          <entry key="java" value="13307" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12855" />
+          <entry key="JAVA" value="13307" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="327" column="12" lean-forward="true" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
+            <state relative-caret-position="794">
+              <caret line="389" column="140" selection-start-line="389" selection-start-column="140" selection-end-line="389" selection-end-column="140" />
               <folding>
                 <element signature="method#main#0;class#GeneticAlgorithm#0" />
                 <element signature="method#getWorkingTime#0;class#GeneticAlgorithm#0" />
@@ -94,10 +93,6 @@
                 <element signature="method#run#0;class#GeneticAlgorithm#0" />
                 <element signature="method#fetchSolution#0;class#GeneticAlgorithm#0" />
                 <element signature="method#nextGen#0;class#GeneticAlgorithm#0" />
-                <element signature="class#5107:5406" />
-                <element signature="method#compare#0;class#5107:5406" />
-                <element signature="class#7332:7815" />
-                <element signature="method#compare#0;class#7332:7815" />
                 <element signature="method#mutate#0;class#GeneticAlgorithm#0" />
               </folding>
             </state>
@@ -107,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-496">
-              <caret line="106" column="53" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+            <state relative-caret-position="239">
+              <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="270">
               <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,7 +147,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="285">
               <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#209#210#0" expanded="true" />
@@ -167,7 +162,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Maschine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="300">
               <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="e#506#507#0" expanded="true" />
@@ -212,12 +207,19 @@
       <find>fixde</find>
       <find>yes</find>
       <find>feasa</find>
+      <find>Syste</find>
+      <find>########################## SOLUTION ########################</find>
+      <find>++++</find>
+      <find>+++ Solution before fixing +++</find>
     </findStrings>
     <replaceStrings>
       <replace>geneticAlgorithm</replace>
       <replace>geneticAlgorithm.setDataSet(</replace>
       <replace>geneticAlgorithm.getDataSet()</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -237,10 +239,10 @@
         <option value="$PROJECT_DIR$/src/DataSet.java" />
         <option value="$PROJECT_DIR$/codemr/ProblemSolving 2/graphs/new_graph.cmr" />
         <option value="$PROJECT_DIR$/src/Tests/GeneticAlgorithmTests.java" />
-        <option value="$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr" />
         <option value="$PROJECT_DIR$/src/Solution.java" />
-        <option value="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" />
+        <option value="$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr" />
         <option value="$PROJECT_DIR$/src/GeneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/GeneticAlgorithmTests.java" />
       </list>
     </option>
   </component>
@@ -251,16 +253,29 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="644" />
-    <option name="y" value="104" />
-    <option name="width" value="1172" />
-    <option name="height" value="682" />
+    <option name="y" value="-29" />
+    <option name="width" value="1024" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ProblemSolving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProblemSolving" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -268,8 +283,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562336902906" />
-    <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562582307252" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/CodeMR-2019.1.1.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -323,20 +338,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All Features in: src" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="3" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+    <configuration name="GeneticAlgorithmTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProblemSolving" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
-      <option name="SUGGESTED_NAME" value="All Features in: src" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <extension name="recording" autostart="false" />
+      <extension name="recording" autostart="true" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneticAlgorithmTests" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -365,18 +371,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.GeneticAlgorithm" />
-      <item itemvalue="Cucumber java.All Features in: src" />
       <item itemvalue="Cucumber java.All Features in: ProblemSolving" />
       <item itemvalue="JUnit.GeneticAlgorithmTests.createSolutionToFix" />
       <item itemvalue="JUnit.GeneticAlgorithmTests.fixDependencyTest" />
+      <item itemvalue="JUnit.GeneticAlgorithmTests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GeneticAlgorithmTests.fixDependencyTest" />
+        <item itemvalue="JUnit.GeneticAlgorithmTests" />
         <item itemvalue="JUnit.GeneticAlgorithmTests.createSolutionToFix" />
         <item itemvalue="Application.GeneticAlgorithm" />
         <item itemvalue="Cucumber java.All Features in: ProblemSolving" />
-        <item itemvalue="Cucumber java.All Features in: src" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +405,8 @@
       <workItem from="1562065813647" duration="4895000" />
       <workItem from="1562151632444" duration="12805000" />
       <workItem from="1562267523756" duration="1450000" />
-      <workItem from="1562320884246" duration="15931000" />
+      <workItem from="1562320884246" duration="16559000" />
+      <workItem from="1562577673415" duration="5051000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1562326928787</created>
@@ -408,49 +415,55 @@
       <option name="project" value="LOCAL" />
       <updated>1562326928787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix">
+      <created>1562336920463</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562336920463</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 14h 57m 22s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 17m 04s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 14m 16s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 23m 55s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 18m 20s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 28m 53s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 19m 22s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 32m 06s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 20m 49s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 33m 20s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 23m 58s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 33m 43s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 45m 18s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 36m 45s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 15h 47m 10s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 36m 56s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 16h 02m 08s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 37m 22s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.05 at 16h 02m 32s.xml">
+    <history-entry file="GeneticAlgorithmTests_fixDependencyTest - 2019.07.08 at 12h 38m 29s.xml">
       <configuration name="GeneticAlgorithmTests.fixDependencyTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67669000" />
+    <option name="totallyTimeSpent" value="73348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1430096" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14270833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -461,7 +474,7 @@
       <window_info id="Learn" order="8" weight="0.32977587" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23454158" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38699362" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5362473" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -485,7 +498,7 @@
       <window_info anchor="right" id="CodeMR Metrics" order="10" weight="0.32977587" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1189968" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14270833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -496,8 +509,8 @@
       <window_info id="Learn" order="8" weight="0.32977587" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.10819672" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34221748" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5362473" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -505,7 +518,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32942432" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -513,11 +526,11 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32977587" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info active="true" anchor="right" x="345" y="66" width="1257" height="915" id="CodeMR" order="9" type="FLOATING" visible="true" weight="0.14407684" />
-      <window_info anchor="right" id="CodeMR Metrics" order="10" />
+      <window_info anchor="right" x="111" y="605" width="486" height="394" id="CodeMR" order="9" type="FLOATING" weight="0.14407684" />
+      <window_info anchor="right" id="CodeMR Metrics" order="10" weight="0.32977587" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,25 +548,25 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>417</line>
+          <line>419</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>386</line>
+          <line>387</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>387</line>
+          <line>388</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>388</line>
+          <line>389</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -619,7 +632,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GeneticAlgorithm.java</url>
-          <line>395</line>
+          <line>397</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
@@ -657,34 +670,20 @@
     <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving 2/ProblemSolving 2.mdl" />
     <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving 2/graphs/new_graph.cmr" />
     <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph(1).cmr" />
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/ArrayList.class">
+    <entry file="file://$PROJECT_DIR$/src/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="190" selection-start-line="190" selection-end-line="190" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr">
-      <provider selected="true" editor-type-id="CodeMR.Model" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving/ProblemSolving.mdl">
-      <provider selected="true" editor-type-id="CodeMR.Model" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="195">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Maschine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="300">
           <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="e#506#507#0" expanded="true" />
@@ -699,20 +698,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solution.java">
+    <entry file="file://$PROJECT_DIR$/src/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving/ProblemSolving.mdl">
+      <provider selected="true" editor-type-id="CodeMR.Model" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codemr/ProblemSolving/graphs/new_graph.cmr">
+      <provider selected="true" editor-type-id="CodeMR.Model" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="285">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#209#210#0" expanded="true" />
@@ -723,20 +746,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithmTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="106" column="53" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="327" column="12" lean-forward="true" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
+        <state relative-caret-position="794">
+          <caret line="389" column="140" selection-start-line="389" selection-start-column="140" selection-end-line="389" selection-end-column="140" />
           <folding>
             <element signature="method#main#0;class#GeneticAlgorithm#0" />
             <element signature="method#getWorkingTime#0;class#GeneticAlgorithm#0" />
@@ -744,10 +757,6 @@
             <element signature="method#run#0;class#GeneticAlgorithm#0" />
             <element signature="method#fetchSolution#0;class#GeneticAlgorithm#0" />
             <element signature="method#nextGen#0;class#GeneticAlgorithm#0" />
-            <element signature="class#5107:5406" />
-            <element signature="method#compare#0;class#5107:5406" />
-            <element signature="class#7332:7815" />
-            <element signature="method#compare#0;class#7332:7815" />
             <element signature="method#mutate#0;class#GeneticAlgorithm#0" />
           </folding>
         </state>

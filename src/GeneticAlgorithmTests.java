@@ -102,13 +102,21 @@ public class GeneticAlgorithmTests {
         init();
         DataSet dataSet=this.geneticAlgorithm.getDataSet();
         Solution testSolution=new Solution(this.solutionMap);
+        System.out.println();
+        System.out.print("+++++++++++++++ Solution before fixing +++++++++++++++++");
+        geneticAlgorithm.printSolution(testSolution);
+        System.out.println();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        System.out.println("+++ Solution before fixing +++");
-        geneticAlgorithm.printSolution(testSolution);
         this.geneticAlgorithm.fixDependancyIssues(testSolution);  //ändert die object reference auf testSolution
-        System.out.println("+++ Solution after fixing +++");
+        System.out.println();
+        System.out.println("+++++++++++++++ Solution after fixing +++++++++++++++");
         geneticAlgorithm.printSolution(testSolution);
-        System.out.println("########################################### TEST #############################################");
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println();
+        System.out.println("#################################################################################################");
+        System.out.println("########################################### TESTING #############################################");
+        System.out.println("#################################################################################################");
         geneticAlgorithm.resetOperationValuesForNextGen();
         for (Maschine m:
                 testSolution.getSolution().keySet()) {
@@ -116,7 +124,6 @@ public class GeneticAlgorithmTests {
             for (Operation op :
                     testSolution.getSolution().get(m)) {
                 List<Operation> dependencyList=null;
-                System.out.println("## TESTING "+op.getName()+" FOR DEPENDENCY PROBLEMS ##");
 
                 for (List<Operation> dependencies:
                         dataSet.getJobs()) {
@@ -124,8 +131,6 @@ public class GeneticAlgorithmTests {
                     for (Operation dependancyOp :
                             dependencies) {
                         if (dependancyOp.equals(op)){
-                            System.out.println("DependancyList for "+op.getName()+" found! ");
-                            System.out.println(dependencies.toString());
                             dependencyList=dependencies;
                             break;
                         }
@@ -137,19 +142,24 @@ public class GeneticAlgorithmTests {
                     for (Operation dependency:
                             dependencyList) {
                         if (dependency.equals(op)){
-                            System.out.print("Operation "+op.getName()+"= Dependency "+dependency.getName()+"=> all dependancies done.");
                             break;
                         }
                         if (!dependency.isDone()) {
-                            System.out.println("############################## TEST FAILED #############################");
+                            System.out.println();
+                            System.out.println("####################### UNFIXED DEPENDENCY FOUND ##########################");
                             System.out.println("Dependancy for "+op.getName()+" not satisfied:");
                             System.out.println(dependency.getName() +" has to be done beforehand");
                             geneticAlgorithm.printSolution(testSolution);
+                            System.out.println();
+                            System.out.println("###########################################################################");
+                            System.out.println();
                             check = false;
                         }
                     }
-                } else System.out.println("nope detected => Skipp check");
-                 System.out.println("## All Clear ##");
+                } else {
+                    if(!op.getName().equals("nope")) System.out.println("########################## "+op.getName()+" CLEAR ###########################");
+                }
+
             }
 
         }

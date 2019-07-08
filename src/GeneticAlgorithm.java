@@ -36,7 +36,7 @@ public class GeneticAlgorithm {
 
     public void printSolution(Solution solution){
         if (solution==null)throw new NullPointerException("solution must not be null");
-        System.out.println("########################## SOLUTION ########################");
+        //System.out.println("########################## SOLUTION ########################");
         for (Maschine m :solution.getSolution().keySet()
         ) {
             System.out.println();
@@ -49,9 +49,9 @@ public class GeneticAlgorithm {
                 }
             }
         }
-        System.out.println();
-        System.out.println("Maschine Runtime: "+getWorkingTime(solution));
-        System.out.println("############################################################");
+       // System.out.println();
+        //System.out.println("Maschine Runtime: "+getWorkingTime(solution));
+        //System.out.println("############################################################");
     }
 
     public void resetOperationValuesForNextGen() {
@@ -360,7 +360,7 @@ public class GeneticAlgorithm {
                                 combinedSolution.getSolution().get(maschineWithProblematicDependancy)
                         ) {
                             if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
-                                timeUntilDependencyDone=timeUntilDependencyDone+opForNopeTime.getRemainingTime();
+                                timeUntilDependencyDone=timeUntilDependencyDone+opForNopeTime.getTime();
                             }
                             else
                             {
@@ -370,25 +370,27 @@ public class GeneticAlgorithm {
 
                         }
 
-                        int timeUntilOp=0;
+                        int timeUntilOpStarts=0;
                         for (Operation opBeforeshortestOp : //finde die Operationen der Solution in der Maschine mit dem Problem
                                 combinedSolution.getSolution().get(topLayer.get(shortestOp))
                         ) {
                             if (!opBeforeshortestOp.equals(shortestOp)){//berechne vergangene Zeit bis zur Problemstelle
-                                timeUntilOp=timeUntilOp+opBeforeshortestOp.getRemainingTime();
+                                timeUntilOpStarts=timeUntilOpStarts+opBeforeshortestOp.getTime();
                             }
                             else break; //stelle gefunden an der das Problem auftritt
 
                         }
 
-                        //füge nope vor der Operation ein
-                        System.out.println("$$$$$$$$$$$$$$$$$$$$$"+shortestOp.getName()+"$$$$$$$$$$$$$$$$$$$$$");
+                        //füge nope vor der Operation ei
+                        System.out.println();
+                        System.out.print("$$$$$$$$$$$$$$$$$$$$$ FIXING "+shortestOp.getName()+" $$$$$$$$$$$$$$$$$$$$$");
                         printSolution(combinedSolution);
                         List<Operation> listOfMaschineTasksForShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
                         int positionForNope = listOfMaschineTasksForShortestOp.indexOf(shortestOp);
-                        listOfMaschineTasksForShortestOp.add(positionForNope,(new Operation("nope",timeUntilOp-timeUntilDependencyDone))); //füge nope mit ensprechender wartezeit ein
+                        listOfMaschineTasksForShortestOp.add(positionForNope,(new Operation("nope",timeUntilDependencyDone-timeUntilOpStarts))); //füge nope mit ensprechender wartezeit ein
                         printSolution(combinedSolution);
-                        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                        System.out.println();
+                        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                     }
                 }
             }
