@@ -306,16 +306,15 @@ public class GeneticAlgorithm {
 
                 for (Operation op :
                         combinedSolution.getSolution().get(m)) {
-                    if (!op.isDone()) {
+                    if (!op.isDone()&&!op.isInProgress()) { //toplayer besteht aus allen perationen die jetzt erst angefangen werden
                         topLayer.put(op,m);
 
                         break;
             }   }   }
+            if (topLayer.isEmpty())break; //EXIT wenn alle ops im toplayer angefangen wurden
 
-            if (topLayer.isEmpty())break; //wenn alle Ops Ready sind
-
+            //find shortest  NEW op
             Operation shortestOp=null;
-
             for (Operation op :
                     topLayer.keySet()) {
                 if (shortestOp==null) shortestOp=op;
@@ -324,79 +323,89 @@ public class GeneticAlgorithm {
             }   }
             //</editor-fold>
 
-            //<editor-fold desc="Find Dependancy List for sortestOp in Toplayer">
+            //<editor-fold desc="Find Dependancy List for shortestOp in TopLayer">
             List<Operation> dependencies=null;
-                                                                        if (jobs==null||jobs.size()==0)throw new NullPointerException("no jobs found");
-            for (List<Operation> job:jobs){
-                                                                                if (job==null||job.size()==0)throw new NullPointerException("no ops in Job");
-                for (Operation op:
-                     job) {
+                                                                                                                                                            if (jobs==null||jobs.size()==0)throw new NullPointerException("no jobs found");
 
-                    if (shortestOp.equals(op)){
-                        dependencies=job;
+            //FÜR JEDE OPERATION IM TOPLAYER. ALSO JEDE NEUE OPERATION DIE NOCH NICHT BEARBEITET WURDE. BERÜCKSICHTIGT, DASS MEHRERE OPERATIONEN GLEICHZEITIG ANFANGEN KÖNNEN. WENN DANN NUR DER SHORTEST op realisiert wird werden die dependacies der anderen neuen nicht gecheckt.
+            for (Operation operationToCheck:topLayer.keySet()) {
+
+                //finde dependancy liste
+                for (List<Operation> job:jobs){
+                                                                                                                                                            if (job==null||job.size()==0)throw new NullPointerException("no ops in Job");
+                    for (Operation op:
+                         job) {
+
+                        if (operationToCheck.equals(op)){
+                            dependencies=job;
+                            break;
+                        }
+                    }
+                    if (dependencies!=null){
                         break;
                     }
                 }
-                if (dependencies!=null){
-                    break;
-                }
-            }
-            //</editor-fold>
 
-            if (dependencies!=null){ //wenn shortestOp kein nope
-                for (Operation dependency :
-                        dependencies) {
-                                                                                            if (dependency.equals(shortestOp)) break; //wenn alle wichtigen dependencies gecheckt
-                    if (!dependency.isDone()){ //FÜR JEDE PROLMEMATISCHE DEPENDANCY
-                        Maschine maschineWithProblematicDependancy=null;
-                        for (Maschine ma : //finde Maschine wo das Problem auftritt
-                                combinedSolution.getSolution().keySet()) {
-                            if(combinedSolution.getSolution().get(ma).contains(dependency))
-                                maschineWithProblematicDependancy=ma;
-                        }
-                                                                        if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
-                        int timeUntilDependencyDone=0;
-                        for (Operation opForNopeTime : //finde die Operationen der Solution in der Maschine mit dem Problem
-                                combinedSolution.getSolution().get(maschineWithProblematicDependancy)
-                        ) {
-                            if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
-                                timeUntilDependencyDone=timeUntilDependencyDone+opForNopeTime.getTime();
-                            }
-                            else
-                            {
-                                timeUntilDependencyDone=timeUntilDependencyDone+dependency.getTime();
-                                break; //stelle gefunden an der das Problem auftritt
+                if (dependencies!=null){ //wenn shortestOp kein nope
+                    for (Operation dependency :
+                            dependencies) {
+
+                        if (dependency.equals(operationToCheck)) break; //wenn alle wichtigen dependencies gecheckt
+
+                        if (!dependency.isDone()){ //FÜR JEDE PROLMEMATISCHE DEPENDANCY
+                            Maschine maschineWithProblematicDependancy=null;
+                            for (Maschine ma : //finde Maschine wo das Problem auftritt
+                                    combinedSolution.getSolution().keySet()) {
+                                if(combinedSolution.getSolution().get(ma).contains(dependency))
+                                    maschineWithProblematicDependancy=ma;
                             }
 
-                        }
+                            if (maschineWithProblematicDependancy==null) throw new NullPointerException("No Maschine found for this op");
 
-                        int timeUntilOpStarts=0;
-                        for (Operation opBeforeshortestOp : //finde die Operationen der Solution in der Maschine mit dem Problem
-                                combinedSolution.getSolution().get(topLayer.get(shortestOp))
-                        ) {
-                            if (!opBeforeshortestOp.equals(shortestOp)){//berechne vergangene Zeit bis zur Problemstelle
-                                timeUntilOpStarts=timeUntilOpStarts+opBeforeshortestOp.getTime();
+                            int timeUntilDependencyDone=0;
+                            for (Operation opForNopeTime : //finde die Operationen der Solution in der Maschine mit dem Problem
+                                    combinedSolution.getSolution().get(maschineWithProblematicDependancy)
+                            ) {
+                                if (!opForNopeTime.equals(dependency)){//berechne vergangene Zeit bis zur Problemstelle
+                                    timeUntilDependencyDone=timeUntilDependencyDone+opForNopeTime.getTime();
+                                }
+                                else
+                                {
+                                    timeUntilDependencyDone=timeUntilDependencyDone+dependency.getTime();
+                                    break; //stelle gefunden an der das Problem auftritt
+                                }
+
                             }
-                            else break; //stelle gefunden an der das Problem auftritt
 
+                            int timeUntilOpStarts=0;
+                            for (Operation opBeforeshortestOp : //finde die Operationen der Solution in der Maschine mit dem Problem
+                                    combinedSolution.getSolution().get(topLayer.get(shortestOp))
+                            ) {
+                                if (!opBeforeshortestOp.equals(shortestOp)){//berechne vergangene Zeit bis zur Problemstelle
+                                    timeUntilOpStarts=timeUntilOpStarts+opBeforeshortestOp.getTime();
+                                }
+                                else break; //stelle gefunden an der das Problem auftritt
+
+                            }
+
+                            //füge nope vor der Operation ei
+                            System.out.println();
+                            System.out.print("$$$$$$$$$$$$$$$$$$$$$ FIXING "+operationToCheck.getName()+" $$$$$$$$$$$$$$$$$$$$$");
+                            printSolution(combinedSolution);
+                            List<Operation> listOfMaschineTasksForOpToCheck=combinedSolution.getSolution().get(topLayer.get(operationToCheck));
+                            int positionForNope = listOfMaschineTasksForOpToCheck.indexOf(operationToCheck);
+                            listOfMaschineTasksForOpToCheck.add(positionForNope,(new Operation("nope",timeUntilDependencyDone-timeUntilOpStarts))); //füge nope mit ensprechender wartezeit ein
+                            printSolution(combinedSolution);
+                            System.out.println();
+                            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                         }
-
-                        //füge nope vor der Operation ei
-                        System.out.println();
-                        System.out.print("$$$$$$$$$$$$$$$$$$$$$ FIXING "+shortestOp.getName()+" $$$$$$$$$$$$$$$$$$$$$");
-                        printSolution(combinedSolution);
-                        List<Operation> listOfMaschineTasksForShortestOp=combinedSolution.getSolution().get(topLayer.get(shortestOp));
-                        int positionForNope = listOfMaschineTasksForShortestOp.indexOf(shortestOp);
-                        listOfMaschineTasksForShortestOp.add(positionForNope,(new Operation("nope",timeUntilDependencyDone-timeUntilOpStarts))); //füge nope mit ensprechender wartezeit ein
-                        printSolution(combinedSolution);
-                        System.out.println();
-                        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                     }
                 }
             }
 
             shortestOp.setDone(true); //shortestOp abgearbeitet
 
+            //update remaining time for every other op
             for (Operation op :
                     topLayer.keySet()) {
                 if (!op.equals(shortestOp)){
